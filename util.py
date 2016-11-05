@@ -4,7 +4,7 @@ import re
 
 _punct_re = re.compile(r'''[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.:]+''')
 
-def slugify(text, delim=u'-'):
+def slugify(text, delim='-'):
     '''
     Taken from http://flask.pocoo.org/snippets/5/
     Generates an ASCII-only slug.
@@ -13,7 +13,7 @@ def slugify(text, delim=u'-'):
     for word in _punct_re.split(text.lower()):
         if word:
             result.append(word)
-    return unicode(delim.join(result))
+    return (delim.join(result))
 
 
 def convert_datetime(post):

@@ -1,8 +1,13 @@
 #!/usr/bin/env python
 
-from flaskext.wtf import Form, TextField, PasswordField, TextAreaField, \
-                            HiddenField, Required
-from flaskext.wtf import validators
+# from flaskext.wtf import Form, TextField, PasswordField, TextAreaField, \
+#                             HiddenField, Required
+# from flaskext.wtf import validators
+from flask_wtf import FlaskForm as Form
+from wtforms import TextField, PasswordField, TextAreaField, \
+                        HiddenField, validators
+from wtforms.validators import Required
+
 
 class LoginForm(Form):
     username = TextField('username', validators=[Required()])

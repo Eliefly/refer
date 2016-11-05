@@ -11,11 +11,11 @@ class Database(object):
 
     def __init__(self):
         try:
-            self.connection = pymongo.Connection()
+            self.client = pymongo.MongoClient()
         except:
             raise DataBaseException
 
-        self.collection = self.connection.refer.posts
+        self.collection = self.client.refer.posts
 
     def add_post(self, title, post, tags):
         url = slugify(title)
